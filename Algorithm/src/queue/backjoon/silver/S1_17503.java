@@ -5,69 +5,60 @@ import java.util.*;
 
 public class S1_17503 {
 	
+	public static class Beer implements Comparable<Beer> {
+		int like, level;
+		
+		Beer(int like, int level) {
+			this.like = like;
+			this.level = level;
+		}
+
+		@Override
+		public int compareTo(Beer o) {
+			return this.level == o.level ? o.like - this.like : this.level - o.level;
+		}
+	}
+	
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new StringReader(args[0]));
 		// BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-		
-		// 첫 줄 읽기
+
 		String[] str = br.readLine().split(" ");
-		int n = Integer.parseInt(str[0]); // 기간
-		int m = Integer.parseInt(str[1]); // 선호도 합
-		int k = Integer.parseInt(str[2]); // 마실 수 있는 맥주 종류 수
+		int period = Integer.parseInt(str[0]); // 기간 n
+		int	targetLike = Integer.parseInt(str[1]); // 선호도 합 m
+		int kind = Integer.parseInt(str[2]); // 마실 수 있는 맥주 종류 수 k
 		
-		// 맥주를 각 도수 레벨을 기준으로 리스트로 만들어 보관
-		HashMap<Integer, ArrayList<Integer>> beersMap = new HashMap<Integer, ArrayList<Integer>>();
+		PriorityQueue<Beer> pqBeer = new PriorityQueue<Beer>();
 		
-		for (int i = 0; i < k; i++) {
+		for (int i = 0; i < kind; i++) {
 			str = br.readLine().split(" ");
-			int like = Integer.parseInt(str[0]); // 선호도 v
-			int level = Integer.parseInt(str[1]); // 도수 레벨 c
 			
-			ArrayList<Integer> beersList = beersMap.get(level);
-			
-			// 해당하는 레벨에 하나도 없었다면 초기화 후 맵에 넣기
-			if (beersList == null) {
-				beersList = new ArrayList<Integer>();
-				beersMap.put(level, beersList);
-			}
-			
-			beersList.add(like);
+			pqBeer.add(new Beer(Integer.parseInt(str[0]), Integer.parseInt(str[1])));
 		}
 		
-		int answer = -1;
-		// 간 레벨 키 리스트 선언
-		ArrayList<Integer> beersLevelKeyList = new ArrayList<>(beersMap.keySet());
-		beersLevelKeyList.sort(null);
-		// 우선순위 큐 선언
-		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
-		
-		// 난이도를 하나씩 올려가며 간 레벨의 최솟값 찾기
+		int answer = -1; // 불가일 때 -1
 		int likeTotal = 0;
-		for (int level : beersLevelKeyList) {
-			ArrayList<Integer> beersList = beersMap.get(level);
+		PriorityQueue<Integer> pqTem = new PriorityQueue<Integer>(); // 가장 선호도가 낮은 맥주를 빼기 위한 임시 pq 설정
+		
+		while (!pqBeer.isEmpty()) {
+			Beer beer = pqBeer.poll();
 			
-			// 하나의 레벨마다 pq에 맥주를 담기
-			for (int like : beersList) {
-				if (pq.size() == n) // 모든 기간에 먹을 맥주가 다 찼을 때
-					likeTotal -= pq.poll(); // pq 헤드에 있는 가장 낮은 선호도를 가진 맥주를 뺌
-				
-				likeTotal += like;
-				pq.add(like);
-				
-				if (likeTotal >= m && pq.size() == n)
-					break ;
-			}
+			likeTotal += beer.like;
+			pqTem.add(beer.like);
 			
-			if (likeTotal >= m && pq.size() == n) {
-				answer = level;
+			if (pqTem.size() > period) // 모든 기간에 먹을 맥주가 다 찼을 때
+				likeTotal -= pqTem.poll(); // pq 헤드에 있는 가장 낮은 선호도를 가진 맥주를 뺌
+			
+			if (likeTotal >= targetLike && pqTem.size() == period) {
+				answer = beer.level;
 				break ;
 			}
 		}
 		
 		bw.write("" + answer);
 		bw.flush();
-		br.close();
-		bw.close();
+//		br.close();
+//		bw.close();
 	}
 }

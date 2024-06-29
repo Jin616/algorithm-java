@@ -35,11 +35,11 @@ public class PriorityQueueMain {
 		
 		String[] inputs = {
 			"3 9 5\r\n"
+			+ "1 4\r\n"
 			+ "2 5\r\n"
-			+ "4 6\r\n"
 			+ "3 3\r\n"
 			+ "4 3\r\n"
-			+ "1 4",
+			+ "4 6",
 			"1 100 2\r\n"
 			+ "99 10\r\n"
 			+ "99 10"
