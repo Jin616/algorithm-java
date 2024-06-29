@@ -1,0 +1,19 @@
+private static void test1417() throws IOException {
+	// S5_1417 problem = new S5_1417();
+	
+	String[] inputs = {
+		
+	};
+	
+	String[] outputs = {
+		
+	};
+	
+	System.out.print("Test case size " + inputs.length);
+	for (int i = 0; i < inputs.length; i++) {
+		String[] args = {inputs[i]};
+		
+		System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+		problem.main(args);
+	}
+}
