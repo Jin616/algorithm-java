@@ -26,8 +26,8 @@ public class PriorityQueueMain {
 		// test11286();
 		// test15903();
 		// test19638();
-		// test17503();
-		test23757();
+		 test17503();
+//		test23757();
 	}
 	
 	private static void test17503() throws IOException {

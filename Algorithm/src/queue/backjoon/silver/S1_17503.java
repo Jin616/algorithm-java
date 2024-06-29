@@ -39,47 +39,35 @@ public class S1_17503 {
 		// 간 레벨 키 리스트 선언
 		ArrayList<Integer> beersLevelKeyList = new ArrayList<>(beersMap.keySet());
 		beersLevelKeyList.sort(null);
-		// 우선순위 큐 내림차순으로 선언
-		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+		// 우선순위 큐 선언
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
 		
 		// 난이도를 하나씩 올려가며 간 레벨의 최솟값 찾기
+		int likeTotal = 0;
 		for (int level : beersLevelKeyList) {
-			PriorityQueue<Integer> tem = new PriorityQueue<Integer>(Collections.reverseOrder());
 			ArrayList<Integer> beersList = beersMap.get(level);
 			
 			// 하나의 레벨마다 pq에 맥주를 담기
-			for (int like : beersList)
-				pq.add(like);
-			
-			// 마실까 말까 맥주 넣었다 뺐다 하기
-			int likeCount = 0;
-			int beerCount = 0;
-			ArrayList<Integer> masilgga = new ArrayList<Integer>();
-			for (int i = 0; !pq.isEmpty() && i < n; i++) {
-				int beer = pq.poll();
+			for (int like : beersList) {
+				if (pq.size() == n) // 모든 기간에 먹을 맥주가 다 찼을 때
+					likeTotal -= pq.poll(); // pq 헤드에 있는 가장 낮은 선호도를 가진 맥주를 뺌
 				
-				tem.add(beer);
-				likeCount += beer;
-				beerCount += 1;
+				likeTotal += like;
+				pq.add(like);
+				
+				if (likeTotal >= m && pq.size() == n)
+					break ;
 			}
 			
-			if (beerCount == n) {
-				// pq에서 이미 가장 좋은 맥주들 뽑고 남은 건 더이상 유지할 가치가 없음
-				pq.clear();
-			
-				if (likeCount >= m) {
-					answer = level;
-					break;
-				}
+			if (likeTotal >= m && pq.size() == n) {
+				answer = level;
+				break ;
 			}
-			
-			// 총합 못 넘었으니 다시 토하기
-			pq = tem;
 		}
 		
 		bw.write("" + answer);
 		bw.flush();
-		// br.close();
-		// bw.close();
+		br.close();
+		bw.close();
 	}
 }
