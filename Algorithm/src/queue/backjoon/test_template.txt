@@ -1,4 +1,4 @@
-private static void test1417() throws IOException {
+throws IOException {
 	// S5_1417 problem = new S5_1417();
 	
 	String[] inputs = {

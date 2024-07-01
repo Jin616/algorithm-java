@@ -7,6 +7,7 @@ import queue.backjoon.silver.S1_15903;
 import queue.backjoon.silver.S1_17503;
 import queue.backjoon.silver.S1_19638;
 import queue.backjoon.silver.S1_28107;
+import queue.backjoon.silver.S1_31860;
 import queue.backjoon.silver.S2_11279;
 import queue.backjoon.silver.S2_1927;
 import queue.backjoon.silver.S2_2075;
@@ -29,9 +30,37 @@ public class PriorityQueueMain {
 		// test19638();
 		// test17503();
 		// test23757();
-		test28107();
+		// test28107();
+		test31860();
 	}
 	
+	private static void test31860() throws IOException {
+		S1_31860 problem = new S1_31860();
+		
+		String[] inputs = {
+			"2 5 3\r\n"
+			+ "10\r\n"
+			+ "18"
+		};
+		
+		String[] outputs = {
+			"5\r\n"
+			+ "18\r\n"
+			+ "22\r\n"
+			+ "21\r\n"
+			+ "18\r\n"
+			+ "14"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
+	}
+
 	private static void test28107() throws IOException {
 		S1_28107 problem = new S1_28107();
 		
