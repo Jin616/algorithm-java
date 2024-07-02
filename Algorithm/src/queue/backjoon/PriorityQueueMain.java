@@ -5,6 +5,7 @@ import java.io.IOException;
 import queue.backjoon.gold.G5_11000;
 import queue.backjoon.gold.G5_1374;
 import queue.backjoon.gold.G5_19598;
+import queue.backjoon.gold.G5_23843;
 import queue.backjoon.silver.S1_11286;
 import queue.backjoon.silver.S1_15903;
 import queue.backjoon.silver.S1_17503;
@@ -40,9 +41,31 @@ public class PriorityQueueMain {
 		// gold
 		// test11000();
 		// test1374();
-		test19598();
+		// test19598();
+		test23843();
 	}
 	
+	private static void test23843() throws IOException {
+		G5_23843 problem = new G5_23843();
+		
+		String[] inputs = {
+			"5 2\r\n"
+			+ "1 4 4 8 1"
+		};
+		
+		String[] outputs = {
+			"9"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
+	}
+
 	private static void test19598() throws IOException {
 		G5_19598 problem = new G5_19598();
 		
