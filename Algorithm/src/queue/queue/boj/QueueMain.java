@@ -2,7 +2,7 @@ package queue.queue.boj;
 
 import java.io.IOException;
 
-import queue.priorityqueue.boj.silver.S5_1417;
+import queue.queue.boj.silver.S5_11866;
 
 public class QueueMain {
 	
@@ -20,14 +20,14 @@ public class QueueMain {
 	}
 
 	private static void test11866() throws IOException {
-		S5_1417 problem = new S5_1417();
+		S5_11866 problem = new S5_11866();
 		
 		String[] inputs = {
-			
+			"7 3"
 		};
 		
 		String[] outputs = {
-			
+			"<3, 6, 2, 7, 5, 1, 4>"
 		};
 		
 		System.out.print("Test case size " + inputs.length);
