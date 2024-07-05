@@ -15,4 +15,4 @@ public class  {
 	
 }
 
-// 백준, backjoon, 문제풀이, 자바
+// 백준, backjoon, 문제풀이, 자바, boj
