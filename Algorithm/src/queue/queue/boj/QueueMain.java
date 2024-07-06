@@ -6,6 +6,7 @@ import queue.queue.boj.silver.S4_10845;
 import queue.queue.boj.silver.S4_15828;
 import queue.queue.boj.silver.S4_18258;
 import queue.queue.boj.silver.S4_2164;
+import queue.queue.boj.silver.S4_26043;
 import queue.queue.boj.silver.S5_11866;
 import queue.queue.boj.silver.S5_2161;
 import queue.queue.boj.silver.S5_26042;
@@ -21,8 +22,48 @@ public class QueueMain {
 		// test10845();
 		// test1158();
 		// test18258();
-		test15828();
-//		test26043();
+		// test15828();
+		test26043();
+	}
+
+	private static void test26043() throws IOException {
+		S4_26043 problem = new S4_26043();
+		
+		String[] inputs = {
+			"6\r\n"
+			+ "1 2 1\r\n"
+			+ "1 1 1\r\n"
+			+ "2 1\r\n"
+			+ "1 3 2\r\n"
+			+ "2 2\r\n"
+			+ "2 2",
+			"1\r\n"
+			+ "1 1 1",
+			"2\r\n"
+			+ "1 1 1\r\n"
+			+ "2 2"
+		};
+		
+		String[] outputs = {
+			"2 3\r\n"
+			+ "1\r\n"
+			+ "None",
+			"None\r\n"
+			+ "None\r\n"
+			+ "1",
+			"None\r\n"
+			+ "1\r\n"
+			+ "None"
+			
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test15828() throws IOException {
