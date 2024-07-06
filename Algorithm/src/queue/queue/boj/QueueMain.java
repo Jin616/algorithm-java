@@ -2,6 +2,7 @@ package queue.queue.boj;
 
 import java.io.IOException;
 
+import queue.queue.boj.silver.S3_1966;
 import queue.queue.boj.silver.S4_10845;
 import queue.queue.boj.silver.S4_15828;
 import queue.queue.boj.silver.S4_18258;
@@ -23,7 +24,36 @@ public class QueueMain {
 		// test1158();
 		// test18258();
 		// test15828();
-		test26043();
+		// test26043();
+		test1966();
+	}
+
+	private static void test1966() throws IOException {
+		S3_1966 problem = new S3_1966();
+		
+		String[] inputs = {
+			"3\r\n"
+			+ "1 0\r\n"
+			+ "5\r\n"
+			+ "4 2\r\n"
+			+ "1 2 3 4\r\n"
+			+ "6 0\r\n"
+			+ "1 1 9 1 1 1"
+		};
+		
+		String[] outputs = {
+			"1\r\n"
+			+ "2\r\n"
+			+ "5"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test26043() throws IOException {
