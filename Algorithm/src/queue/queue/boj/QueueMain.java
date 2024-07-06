@@ -20,9 +20,64 @@ public class QueueMain {
 		// test2164();
 		// test10845();
 		// test1158();
-		test18258();
-//		test15828(;)
+		// test18258();
+		test15828();
 //		test26043();
+	}
+
+	private static void test15828() throws IOException {
+		S4_15828 problem = new S4_15828();
+		
+		String[] inputs = {
+			"5\r\n"
+			+ "1\r\n"
+			+ "2\r\n"
+			+ "0\r\n"
+			+ "3\r\n"
+			+ "4\r\n"
+			+ "0\r\n"
+			+ "5\r\n"
+			+ "6\r\n"
+			+ "0\r\n"
+			+ "0\r\n"
+			+ "-1",
+			"1\r\n"
+			+ "1\r\n"
+			+ "2\r\n"
+			+ "3\r\n"
+			+ "4\r\n"
+			+ "5\r\n"
+			+ "6\r\n"
+			+ "7\r\n"
+			+ "-1",
+			"1\r\n"
+			+ "1\r\n"
+			+ "2\r\n"
+			+ "0\r\n"
+			+ "3\r\n"
+			+ "4\r\n"
+			+ "0\r\n"
+			+ "5\r\n"
+			+ "6\r\n"
+			+ "0\r\n"
+			+ "7\r\n"
+			+ "0\r\n"
+			+ "-1"
+		};
+		
+		String[] outputs = {
+			"5 6",
+			"1",
+			"empty"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test18258() throws IOException {
