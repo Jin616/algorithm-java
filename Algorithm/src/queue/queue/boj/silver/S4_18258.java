@@ -1,5 +1,18 @@
 package queue.queue.boj.silver;
 
-public class S4_18258 {
+import java.io.*;
+import java.util.*;
 
+public class S4_18258 {
+	
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new StringReader(args[0]));
+		// BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		
+		bw.flush();
+		// br.close();
+		// bw.close();
+	}
+	
 }

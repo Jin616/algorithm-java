@@ -3,6 +3,8 @@ package queue.queue.boj;
 import java.io.IOException;
 
 import queue.queue.boj.silver.S4_10845;
+import queue.queue.boj.silver.S4_15828;
+import queue.queue.boj.silver.S4_18258;
 import queue.queue.boj.silver.S4_2164;
 import queue.queue.boj.silver.S5_11866;
 import queue.queue.boj.silver.S5_2161;
@@ -16,11 +18,77 @@ public class QueueMain {
 		// test2161();
 		// test26042();
 		// test2164();
-		test10845();
-//		test1158();
-//		test18258();
+		// test10845();
+		// test1158();
+		test18258();
 //		test15828(;)
 //		test26043();
+	}
+
+	private static void test18258() throws IOException {
+		S4_18258 problem = new S4_18258();
+		
+		String[] inputs = {
+			"15\r\n"
+			+ "push 1\r\n"
+			+ "push 2\r\n"
+			+ "front\r\n"
+			+ "back\r\n"
+			+ "size\r\n"
+			+ "empty\r\n"
+			+ "pop\r\n"
+			+ "pop\r\n"
+			+ "pop\r\n"
+			+ "size\r\n"
+			+ "empty\r\n"
+			+ "pop\r\n"
+			+ "push 3\r\n"
+			+ "empty\r\n"
+			+ "front"
+		};
+		
+		String[] outputs = {
+			"1\r\n"
+			+ "2\r\n"
+			+ "2\r\n"
+			+ "0\r\n"
+			+ "1\r\n"
+			+ "2\r\n"
+			+ "-1\r\n"
+			+ "0\r\n"
+			+ "1\r\n"
+			+ "-1\r\n"
+			+ "0\r\n"
+			+ "3"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
+	}
+
+	private static void test1158() throws IOException {
+		S4_15828 problem = new S4_15828();
+		
+		String[] inputs = {
+			"7 3"
+		};
+		
+		String[] outputs = {
+			"<3, 6, 2, 7, 5, 1, 4>"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test10845() throws IOException {
