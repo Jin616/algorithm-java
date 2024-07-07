@@ -3,6 +3,7 @@ package queue.queue.boj;
 import java.io.IOException;
 
 import queue.queue.boj.silver.S2_14713;
+import queue.queue.boj.silver.S2_5464;
 import queue.queue.boj.silver.S3_12873;
 import queue.queue.boj.silver.S3_1966;
 import queue.queue.boj.silver.S3_24511;
@@ -33,7 +34,59 @@ public class QueueMain {
 		// test24511();
 		// test12873();
 		// test29813();
-		test14713();
+		// test14713();
+		test5464();
+	}
+
+	private static void test5464() throws IOException {
+		S2_5464 problem = new S2_5464();
+		
+		String[] inputs = {
+			"3 4\r\n"
+			+ "2\r\n"
+			+ "3\r\n"
+			+ "5\r\n"
+			+ "200\r\n"
+			+ "100\r\n"
+			+ "300\r\n"
+			+ "800\r\n"
+			+ "3\r\n"
+			+ "2\r\n"
+			+ "-3\r\n"
+			+ "1\r\n"
+			+ "4\r\n"
+			+ "-4\r\n"
+			+ "-2\r\n"
+			+ "-1",
+			"2 4\r\n"
+			+ "5\r\n"
+			+ "2\r\n"
+			+ "100\r\n"
+			+ "500\r\n"
+			+ "1000\r\n"
+			+ "2000\r\n"
+			+ "3\r\n"
+			+ "1\r\n"
+			+ "2\r\n"
+			+ "4\r\n"
+			+ "-1\r\n"
+			+ "-3\r\n"
+			+ "-2\r\n"
+			+ "-4"
+		};
+		
+		String[] outputs = {
+			"5300",
+			"16200"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\ne : " + outputs[i] + "\no : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test14713() throws IOException {
