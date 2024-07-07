@@ -5,6 +5,7 @@ import java.io.IOException;
 import queue.queue.boj.silver.S3_12873;
 import queue.queue.boj.silver.S3_1966;
 import queue.queue.boj.silver.S3_24511;
+import queue.queue.boj.silver.S3_29813;
 import queue.queue.boj.silver.S4_10845;
 import queue.queue.boj.silver.S4_15828;
 import queue.queue.boj.silver.S4_18258;
@@ -29,7 +30,42 @@ public class QueueMain {
 		// test26043();
 		// test1966();
 		// test24511();
-		test12873();
+		// test12873();
+		test29813();
+	}
+
+	private static void test29813() throws IOException {
+		S3_29813 problem = new S3_29813();
+		
+		String[] inputs = {
+			"5\r\n"
+			+ "A 3\r\n"
+			+ "B 2\r\n"
+			+ "C 8\r\n"
+			+ "D 5\r\n"
+			+ "E 4",
+			"7\r\n"
+			+ "D 3\r\n"
+			+ "BZ 99\r\n"
+			+ "PVC 46\r\n"
+			+ "R 2\r\n"
+			+ "HG 13\r\n"
+			+ "T 5\r\n"
+			+ "YU 7"
+		};
+		
+		String[] outputs = {
+			"B",
+			"PVC"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test12873() throws IOException {
