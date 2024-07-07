@@ -13,7 +13,7 @@ throws IOException {
 	for (int i = 0; i < inputs.length; i++) {
 		String[] args = {inputs[i]};
 		
-		System.out.print("\nexcept is " + outputs[i] + "\noutput is : ");
+		System.out.print("\ne : " + outputs[i] + "\no : ");
 		problem.main(args);
 	}
 }

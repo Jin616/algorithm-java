@@ -2,6 +2,7 @@ package queue.queue.boj;
 
 import java.io.IOException;
 
+import queue.queue.boj.silver.S2_14713;
 import queue.queue.boj.silver.S3_12873;
 import queue.queue.boj.silver.S3_1966;
 import queue.queue.boj.silver.S3_24511;
@@ -31,7 +32,47 @@ public class QueueMain {
 		// test1966();
 		// test24511();
 		// test12873();
-		test29813();
+		// test29813();
+		test14713();
+	}
+
+	private static void test14713() throws IOException {
+		S2_14713 problem = new S2_14713();
+		
+		String[] inputs = {
+			"3\r\n"
+			+ "i want to see you\r\n"
+			+ "next week\r\n"
+			+ "good luck\r\n"
+			+ "i want next good luck week to see you",
+			"2\r\n"
+			+ "i found\r\n"
+			+ "an interesting cave\r\n"
+			+ "i found an cave interesting",
+			"2\r\n"
+			+ "please\r\n"
+			+ "be careful\r\n"
+			+ "pen pineapple apple pen",
+			"2\r\n"
+			+ "ab cd\r\n"
+			+ "ef gh ij\r\n"
+			+ "ab ef gh ij"
+		};
+		
+		String[] outputs = {
+			"Possible",
+			"Impossible",
+			"Impossible",
+			"Impossible"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\ne : " + outputs[i] + "\no : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test29813() throws IOException {
