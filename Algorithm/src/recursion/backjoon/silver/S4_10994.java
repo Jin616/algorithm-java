@@ -40,7 +40,7 @@ public class S4_10994 {
 		for (int i = 1 + differ; i < star.length - 1 - differ; i++) {
 			star[i][differ] = '*';
 			star[i][star.length - 1 - differ] = '*';
-		} 
+		}
 	}
 	
 }
