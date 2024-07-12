@@ -4,15 +4,41 @@ import java.io.IOException;
 
 import recursion.backjoon.silver.S4_10994;
 import recursion.backjoon.silver.S5_17478;
+import recursion.backjoon.silver.S5_18511;
 
 public class RecursionMain {
 
 	public static void main(String[] args) throws IOException {
 		// silver
 		// test10994();
-		test17478();
+		// test17478();
+		test18511();
 	}
 
+	private static void test18511() throws IOException {
+		S5_18511 problem = new S5_18511();
+		
+		String[] inputs = {
+			"657 3\r\n"
+			+ "1 5 7",
+			"100000000 1\r\n"
+			+ "1"
+		};
+		
+		String[] outputs = {
+			"577",
+			"11111111"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\ne : " + outputs[i] + "\no : ");
+			problem.main(args);
+		}
+	}
+	
 	private static void test17478() throws IOException {
 		S5_17478 problem = new S5_17478();
 		
