@@ -3,6 +3,7 @@ package recursion.backjoon;
 import java.io.IOException;
 
 import recursion.backjoon.silver.S4_10994;
+import recursion.backjoon.silver.S4_24418;
 import recursion.backjoon.silver.S5_17478;
 import recursion.backjoon.silver.S5_18511;
 
@@ -12,7 +13,33 @@ public class RecursionMain {
 		// silver
 		// test10994();
 		// test17478();
-		test18511();
+		// test18511();
+		test24418();
+	}
+
+	private static void test24418() throws IOException {
+		S4_24418 problem = new S4_24418();
+		
+		String[] inputs = {
+			"5\r\n"
+			+ "1 1 1 1 1\r\n"
+			+ "2 2 2 2 2\r\n"
+			+ "3 3 3 3 3\r\n"
+			+ "4 4 4 4 4\r\n"
+			+ "5 5 5 5 5"
+		};
+		
+		String[] outputs = {
+			"252 25"
+		};
+		
+		System.out.print("Test case size " + inputs.length);
+		for (int i = 0; i < inputs.length; i++) {
+			String[] args = {inputs[i]};
+			
+			System.out.print("\ne : " + outputs[i] + "\no : ");
+			problem.main(args);
+		}
 	}
 
 	private static void test18511() throws IOException {
